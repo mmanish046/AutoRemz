@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign in – AutoFixer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Same header as index.html -->
+    <header>
+      <div class="brand">
+        <!-- Use your logo image here -->
+        <img src="brand_logo" alt="AutoRemz logo" class="logo" />
+      </div>
+
+      <div class="header-actions">
+        <a href="index.php" class="btn btn-ghost">
+          ← Back to home
+        </a>
+      </div>
+    </header>
+
+    <main class="auth-layout">
+      <section class="auth-card">
+        <h1 class="auth-title">Sign in to your account</h1>
+        <p class="auth-subtitle">
+          Access your saved cars, quotes, and repair history.
+        </p>
+
+<form class="auth-form" action="login.php" method="POST">
+  <label>
+    <span>Email</span>
+    <input type="email" name="email" required placeholder="you@example.com">
+  </label>
+
+  <label>
+    <span>Password</span>
+    <input type="password" name="password" required placeholder="••••••••">
+  </label>
+
+  <div class="auth-extra-row">
+    <label class="auth-checkbox">
+      <input type="checkbox" name="remember">
+      <span>Remember me</span>
+    </label>
+    <a href="#" class="auth-link">Forgot password?</a>
+  </div>
+
+  <button type="submit" class="btn btn-primary auth-submit">
+    Sign in
+  </button>
+</form>
+
+        <p class="auth-footer-text">
+          Don’t have an account?
+          <a href="signup.php" class="auth-link">Create one</a>
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
