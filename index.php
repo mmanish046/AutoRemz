@@ -506,7 +506,7 @@ if ($isUser) {
               <span id="matching-count">0 shops</span> match your current filters
             </span>
             <button id="search-btn" class="btn btn-primary">
-              Find matching 
+              Find matching shop
             </button>
           </div>
 
