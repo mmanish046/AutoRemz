@@ -37,6 +37,8 @@ if ($isUser) {
             $stmt->close();
         }
 
+        This is the only change
+        
         // Total custom requests
         $sql = "
           SELECT COUNT(*) AS c
