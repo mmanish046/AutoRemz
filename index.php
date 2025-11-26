@@ -38,6 +38,7 @@ if ($isUser) {
         }
 
         // This is the only change, and this is another one
+        //Test git merge
         
         // Total custom requests
         $sql = "
