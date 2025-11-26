@@ -37,7 +37,7 @@ $KEYWORD_OPTIONS = [
     "AC / Heating",
     "Tires / Wheels",
     "Transmission",
-    "Diagnostics"
+    // "Diagnostics"
 ];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
