@@ -37,7 +37,7 @@ if ($isUser) {
             $stmt->close();
         }
 
-        This is the only change, and this is another one
+        // This is the only change, and this is another one.
         
         // Total custom requests
         $sql = "
