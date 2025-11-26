@@ -439,7 +439,7 @@ if ($isUser) {
             Find the <span class="accent">right shop</span> for the repair you actually need.
           </h1>
           <p class="hero-subtitle">
-            Tell AutoRemz what’s wrong with your car and we’ll match you with nearby repair shops
+            Don't Tell AutoRemz what’s wrong with your car and we’ll match you with nearby repair shops
             that specialize in that kind of work. Compare options, chat in one place, and book when
             you’re ready.
           </p>
