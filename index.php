@@ -13,7 +13,7 @@ $dbname     = "u138912455_autoremz_db";
 $resCount        = 0;
 $quoteCount      = 0;
 $hasResUnread    = false;
-$hasQuoteUnread  = false
+$hasQuoteUnread  = false;
 
 if ($isUser) {
     $userId = (int) $_SESSION['user_id'];
