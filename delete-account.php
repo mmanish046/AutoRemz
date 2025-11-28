@@ -5,13 +5,17 @@
 
 session_start();
 
+header("Content-Type: application/json");
+
 //Make sure user is logged in
 if (!isset($_SESSION['user_id'])) {
 	echo json_encode(["success" => false, "nessage" => "Not authenticated"]);
 	exit;
 }
 
-$input = json_decode(file_get_contents("user-dashboard.php"), true);
+$input = json_decode(file_get_contents("php://input"), true);
+
+$input = json_decode($raw, true);
 
 if (!isset($input['delete'])) {
 	echo json_encode(["success" => false, "message" => "Invalid request"]);
@@ -27,7 +31,7 @@ try {
 
 	//Delete user from DB
 	$stmt = $pdo->prepare("DELETE FROM users WHERE id = :id");
-	$stmt->bindParam(":id", $userId, PDO::PARAM_INT);
+	$stmt->bindParam(":id", $userId);
 	$stmt->execute();
 
 	//Destroy session
@@ -38,7 +42,7 @@ try {
 
 } catch (Exception $e) {
 	echo json_encode(["success" => false, "message" => $e->getMessage()]);
-
+	exit;
 }
 ?>
 
