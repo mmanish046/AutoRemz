@@ -578,6 +578,19 @@ function nice_datetime($dt) {
   display: block;
 }
 
+.danger-btn {
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.danger-btn:hover {
+    opacity: 0.8;
+}
+
   </style>
 </head>
 <body>
@@ -838,8 +851,8 @@ function nice_datetime($dt) {
                     onclick="showProfileSection('garage')">
               My garage
             </button>
-            <button type="button"
-                    class="profile-tab">
+            <button id="deleteAccountbtn"
+                    class="danger-btn">
               Delete My Account
             </button>
           </div>
@@ -954,6 +967,9 @@ function nice_datetime($dt) {
   document.addEventListener('DOMContentLoaded', function() {
     showProfileSection('personal');
   });
+
+  //Deleting the user Profile
+  //document.getElementById
 </script>
 
 
