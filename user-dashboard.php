@@ -984,6 +984,7 @@ function nice_datetime($dt) {
 
       if (data.success) {
           alert("Your account has been permanently deleted.");
+          window.location.reload()
       } else {
           alert("Error deleting account");
       }
