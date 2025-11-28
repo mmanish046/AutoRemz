@@ -22,7 +22,7 @@ $userId - $_SESSION['user_id'];
 
 try {
 	//Database connection
-	$pdo = new PDO("mysql:host=localhost;dbname=u138912455_autoremz_db", "username", "password");
+	$pdo = new PDO("mysql:host=localhost;dbname=u138912455_autoremz_db", "u138912455_autoremz_user", "HostingerDBpinetree90601@");
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	//Delete user from DB
