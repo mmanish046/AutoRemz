@@ -969,7 +969,7 @@ function nice_datetime($dt) {
   });
 
   //Deleting the user Profile
-  document.getElementById('deleteAccountBtn').addEventListener('click', async() =>{
+  document.getElementById('deleteAccountBtn').addEventListener('click', async () => {
       const confirmDelete = confirm("Are you sure? This action cannot be undone.");
 
       if (!confirmDelete) return;
@@ -989,7 +989,5 @@ function nice_datetime($dt) {
       }
   })
 </script>
-
-
 </body>
 </html>

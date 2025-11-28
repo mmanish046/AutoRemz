@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 	exit;
 }
 
-$input = json_decode(file_get_contents("user-dashboard.php"), true);
+$input = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($input['delete'])) {
 	echo json_encode(["success" => false, "message" => "Invalid request"]);
