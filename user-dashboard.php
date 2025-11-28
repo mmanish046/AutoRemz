@@ -839,8 +839,8 @@ function nice_datetime($dt) {
               My garage
             </button>
             <button type="button"
-                    class="profile-tab"
-              Delete profile
+                    class="profile-tab">
+              Delete My Account
             </button>
           </div>
         </div>
