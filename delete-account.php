@@ -5,40 +5,50 @@ error_reporting(E_ALL);
 
 session_start();
 
+header("Content-Type: application/json");
+
 //Make sure user is logged in
 if (!isset($_SESSION['user_id'])) {
 	echo json_encode(["success" => false, "message" => "Not authenticated"]);
 	exit;
 }
 
-$input = json_decode(file_get_contents("php://input"), true);
+//Database connection
+$servername = "localhost";
+$username   = "u138912455_autoremz_user";
+$password   = "HostingerDBpinetree90601@";
+$dbname     = "u138912455_autoremz_db";
 
-$input = json_decode($raw, true);
+$conn = new mysqli($servername, $username, $password, $dbname)
 
-if (!isset($input['delete'])) {
-	echo json_encode(["success" => false, "message" => "Invalid request"]);
+if ($conn->connect_error) {
+	echo json_encode(["success" => false, "message" => "connection failed"]);
 	exit;
 }
 
+//Fetch user ID from session
 $userId - $_SESSION['user_id'];
 
-try {
-	//Database connection
-	$pdo = new PDO("mysql:host=localhost;dbname=u138912455_autoremz_db", "u138912455_autoremz_user", "HostingerDBpinetree90601@");
-	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Delete user from the Database
+$stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+$stmt->bind_param("i", $userId);
 
-	//Delete user from DB
-	$stmt = $pdo->prepare("DELETE FROM users WHERE id = :id");
-	$stmt->bindParam(":id", $userId);
+if ($stmt->execute()) {
+	// Delete associated cars (if any)
+	$stmt = $conn->prepare("DELETE FROM cars WHERE user_id = ?");
+	$stmt->bind_param("i", $userId);
 	$stmt->execute();
 
-	//Destroy session
+	session_unset();
 	session_destroy();
 
-	echo json_encode(["success" => true]);
-
-} catch (Exception $e) {
-	echo json_encode(["success" => false, "message" => $e->getMessage()]);
+	echo json_encode(["success" => true, "message" => "Account deleted successfully"]);
+} else {
+	echo json_encode(["success" => false, "message" => "Error deleting account"]);
 }
+
+$stmt->close();
+$conn->close();
+
 ?>
 
