@@ -838,6 +838,10 @@ function nice_datetime($dt) {
                     onclick="showProfileSection('garage')">
               My garage
             </button>
+            <button type="button"
+                    class="profile-tab"
+              Delete profile
+            </button>
           </div>
         </div>
 
