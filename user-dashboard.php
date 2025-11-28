@@ -969,7 +969,25 @@ function nice_datetime($dt) {
   });
 
   //Deleting the user Profile
-  //document.getElementById
+  document.getElementById('deleteAccountBtn').addEventListener('click', async() =>{
+      const confirmDelete = confirm("Are you sure? This action cannot be undone.");
+
+      if (!confirmDelete) return;
+
+      const reponse = await fetch("delete_account.php",{
+          method: "POST",
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({delete: true})
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+          alert("Your account has been permanently deleted.");
+      } else {
+          alert("Error deleting account");
+      }
+  })
 </script>
 
 
