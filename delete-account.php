@@ -5,7 +5,7 @@
 
 session_start();
 
-//header("Content-Type: application/json");
+header('Content-Type: application/json');
 
 //Make sure user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -42,7 +42,6 @@ try {
 
 } catch (Exception $e) {
 	echo json_encode(["success" => false, "message" => $e->getMessage()]);
-	exit;
 }
 ?>
 
