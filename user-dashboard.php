@@ -851,7 +851,7 @@ function nice_datetime($dt) {
                     onclick="showProfileSection('garage')">
               My garage
             </button>
-            <button id="deleteAccountbtn"
+            <button id="deleteAccountBtn"
                     class="danger-btn">
               Delete My Account
             </button>
