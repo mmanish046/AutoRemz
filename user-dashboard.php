@@ -974,7 +974,7 @@ function nice_datetime($dt) {
 
       if (!confirmDelete) return;
 
-      const reponse = await fetch("delete_account.php",{
+      const reponse = await fetch("delete-account.php",{
           method: "POST",
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({delete: true})
